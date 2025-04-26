@@ -1,0 +1,28 @@
+<PlanRepairOfPos.PlanRegister>=Me.WorkingCredential.UserId;
+<PlanRepairOfPos.PlanNumber>=Me.Case.CaseNumber;
+<PlanRepairOfPos.RegisterDate>=DateTime.Now;
+//----------------------------------------------------------------------------
+var userArea= Me.Case.WorkingCredential.AreaName
+if(userArea=="parandFactory") {
+
+var OUser;
+OUser=CHelper.getUsersForPosition("productTechnecian");
+
+for(var I=0;I<OUser.Count;I++)
+{
+var newRecord= Me.addRelation("PlanRepairOfPos.ListrePairmen");
+
+newRecord.setXPath("Pairmen",OUser[I]);
+}
+}
+//--------------------------------------------------------------------------
+else {
+var OUser;
+
+OUser=CHelper.getUsersForPosition("PosRepairTechinician");
+for(var I=0;I<OUser.Count;I++)
+{
+var newRecord= Me.addRelation("PlanRepairOfPos.ListrePairmen");
+newRecord.setXPath("Pairmen",OUser[I]);
+}
+}
