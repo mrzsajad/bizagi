@@ -1,0 +1,28 @@
+/*
+Me.detachAllCollectionItems("PlanRepairOfPos.ListDevise")
+
+
+// Obtain the file collection from the data model
+var oFile =<PlanRepairOfPos.FileAttachment>;
+
+if(!oFile.size() > 0)
+{
+     CHelper.ThrowValidationError("لطفا فایل را بارگذاری نمایید");
+}
+// Obtain the first loaded file and its data
+var oFileDef = oFile.get(0);
+var oFileDataDef = oFileDef.getXPath("Data");
+
+// Extract file content
+var dtContenIn = CHelper.GetDataTableFromWorkSheet(oFileDataDef, 0);
+
+// Obtain each record and add it to the Sales Data entity
+for(var j=0; j < dtContenIn.Rows.Count; j++)
+{
+ var oRecord = dtContenIn.Rows[j];
+ var newRecord = Me.newCollectionItem("PlanRepairOfPos.ListDevise");
+ newRecord.setXPath("ScannedSerial",oRecord[0]);
+
+}
+
+*/
