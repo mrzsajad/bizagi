@@ -1,0 +1,3 @@
+var CaseIdProcess=Me.Case.Id;
+
+CHelper.abortProcess(Me, CaseIdProcess, 1, "");
