@@ -1,0 +1,19 @@
+/*
+var ListScanSerial=<PlanRepairOfPos.ListDevise.ScannedSerial>;
+var ListScan=<PlanRepairOfPos.ListDevise>;
+
+for(var i=0;i<ListScanSerial.size();i++)
+{
+
+var parameters = new FilterParameters();
+parameters.AddParameter("@Serial",ListScanSerial[i]);
+
+var idSerial = Me.getXPath("entity-list('Device','SerialNo=@Serial')",parameters);
+
+
+if(idSerial.size()>0)
+{
+ListScan.get(i).setXPath("Device",idSerial.get(0).getXPath("Id"));
+}
+}
+*/
